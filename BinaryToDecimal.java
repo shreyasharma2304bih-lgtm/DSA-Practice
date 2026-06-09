@@ -4,12 +4,15 @@ public class BinaryToDecimal {
     Scanner sc = new Scanner(System.in);
     System.out.println("Enter binary number: ");
     int n = sc.nextInt();
-    String binary = "";
-    while(n>0) {
-        binary = (n % 2)+binary;
-        n = n/2;
+    int decimal = 0;
+    int power = 0;
+    while(binary > 0) {
+        int digit = binary % 10 ;
+        decimal += digit * Math.pow(2,power);
+        power++;
+        binary /= 10;
     }
-    System.out.println("Decimal equivalent: " + binary);
+    System.out.println(decimal);
 }
 
 }
